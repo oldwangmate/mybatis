@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--核心配置文件-->
+<configuration>
+    <!--引入外部配置文件-->
+    <properties resource="db.properties"/>
+
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+   <!--配置别名-->
+    <typeAliases>
+        <typeAlias type="com.oldwang.pojo.User" alias="User"></typeAlias>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?userSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+    <!--每一个Mapper都需要在mybatis核心配置文件中注册-->
+    <mappers>
+        <mapper resource="com/oldwang/dao/UserMapper.xml"></mapper>
+    </mappers>
+</configuration>

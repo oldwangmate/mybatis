@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Quick-Start</module>
+        <module>Optimization</module>
     </modules>
 
 
