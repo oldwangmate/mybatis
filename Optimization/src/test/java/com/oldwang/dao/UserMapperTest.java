@@ -120,4 +120,12 @@ public class UserMapperTest {
         userByRowBounds.forEach(System.out::println);
         sqlSession.close();
     }
+
+    @Test
+    public void getListUser(){
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        List<User> listUser = mapper.getListUser();
+        listUser.forEach(System.out::println);
+    }
 }

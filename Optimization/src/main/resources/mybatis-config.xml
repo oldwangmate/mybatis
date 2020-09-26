@@ -39,6 +39,7 @@
     </environments>
     <!--每一个Mapper都需要在mybatis核心配置文件中注册-->
     <mappers>
-        <mapper resource="com/oldwang/dao/UserMapper.xml"></mapper>
+        <!--<mapper resource="com/oldwang/dao/UserMapper.xml"></mapper>-->
+        <mapper class="com.oldwang.dao.UserMapper"></mapper>
     </mappers>
 </configuration>

@@ -1,6 +1,7 @@
 package com.oldwang.dao;
 
 import com.oldwang.pojo.User;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
@@ -34,4 +35,8 @@ public interface UserMapper {
 
     //分页查询 RowBounds
     List<User> getUserByRowBounds(RowBounds rowBounds);
+
+    //注解开发
+    @Select("select * from user")
+    List<User> getListUser();
 }
