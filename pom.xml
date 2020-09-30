@@ -11,6 +11,7 @@
     <modules>
         <module>Quick-Start</module>
         <module>Optimization</module>
+        <module>Many_to_one</module>
     </modules>
 
 
