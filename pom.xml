@@ -12,6 +12,7 @@
         <module>Quick-Start</module>
         <module>Optimization</module>
         <module>Many_to_one</module>
+        <module>dynamic-sql</module>
     </modules>
 
 
