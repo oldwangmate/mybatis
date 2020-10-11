@@ -2,11 +2,12 @@ package com.oldwang.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
-public class Blog {
+public class Blog implements Serializable {
     private String id ;
     private String title;
     private String author;

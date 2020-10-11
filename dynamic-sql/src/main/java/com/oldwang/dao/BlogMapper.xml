@@ -5,6 +5,14 @@
 
 <mapper namespace="com.oldwang.dao.BlogMapper">
 
+    <cache
+            eviction="FIFO"
+            flushInterval="60000"
+            size="512"
+            readOnly="true"
+            type="org.mybatis.caches.ehcache.EhcacheCache"
+    />
+
     <insert id="addBlog" parameterType="blog">
       insert into blog(id,title,author,create_time,views)
       values (#{id},#{title},#{author},#{createTime},#{views})

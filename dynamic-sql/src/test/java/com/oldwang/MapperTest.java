@@ -64,8 +64,21 @@ public class MapperTest {
     @Test
     public void test(){
         SqlSession sqlSession = MybatisUtils.getSqlSession();
+        SqlSession sqlSession2 = MybatisUtils.getSqlSession();
+
         BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+        BlogMapper mapper2 = sqlSession2.getMapper(BlogMapper.class);
+
         List<Blog> blog = mapper.getBlog(Arrays.asList("1","2","3"));
         blog.forEach(System.out::println);
+        sqlSession.close();
+
+        System.out.println("=========================");
+        List<Blog> blog1 = mapper2.getBlog(Arrays.asList("1","2","3"));
+        blog1.forEach(System.out::println);
+        System.out.println(blog == blog1);
+
+        sqlSession2.close();
+
     }
 }
